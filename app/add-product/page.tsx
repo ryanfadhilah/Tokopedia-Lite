@@ -23,17 +23,16 @@ async function addProduct(formData: FormData) {
 
     // send data to server
     await prisma.products.create({
-        data: { name, description, imageUrl, price },
+        data: { name, description, imageUrl, price }
     });
     redirect("/");
-
 }
 
 const AddProduct = () => {
     return (
         <div className='flex flex-col gap-5'>
 
-            <h1>Add Product</h1>
+            <h1 className=" font-semibold text-xl">Add Product</h1>
 
             <form
                 action={addProduct}
