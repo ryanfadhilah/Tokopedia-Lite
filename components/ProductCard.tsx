@@ -1,26 +1,26 @@
-import { products } from "@prisma/client"
+import { Product } from "@prisma/client"
 import Link from "next/link"
 import PriceTag from "./PriceTag"
 import Image from "next/image"
 
 interface ProductCardProps {
-    products: products
+    product: Product
 }
 
-const ProductCard = ({ products }: ProductCardProps) => {
+const ProductCard = ({ product }: ProductCardProps) => {
 
     // still a week
-    const isNew = Date.now() - new Date(products?.createdAt).getTime() < 1000 * 60 * 60 * 24 * 7
+    const isNew = Date.now() - new Date(product?.createdAt).getTime() < 1000 * 60 * 60 * 24 * 7
 
     return (
         <Link
-            href={`/products/${products?.id}`}
+            href={`/product/${product?.id}`}
             className="card w-full bg-base-100 hover:shadow-xl transition-shadow"
         >
             <figure>
                 <Image
-                    src={products?.imageUrl}
-                    alt={products?.name}
+                    src={product?.imageUrl}
+                    alt={product?.name}
                     width={800}
                     height={400}
                     className="h-48 object-cover"
@@ -32,7 +32,7 @@ const ProductCard = ({ products }: ProductCardProps) => {
 
             <div className="card-body ">
                 <h2 className="card-title">
-                    {products?.name}
+                    {product?.name}
                     {isNew
                         ?
                         <span className="badge text-sm bg-yellow-300">New</span>
@@ -41,9 +41,9 @@ const ProductCard = ({ products }: ProductCardProps) => {
                     }
                 </h2>
                 <p>
-                    {products?.description}
+                    {product?.description}
                 </p>
-                <PriceTag products={products} />
+                <PriceTag product={product} />
             </div>
 
         </Link>

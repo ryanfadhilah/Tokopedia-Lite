@@ -1,17 +1,17 @@
 import formatPrice from "@/lib/format"
-import { products } from "@prisma/client"
+import { Product } from "@prisma/client"
 
 interface PriceTagProps {
-    products: products
+    product: Product
     className?: string
 }
 
-export default function PriceTag({ products, className }: PriceTagProps) {
+export default function PriceTag({ product, className }: PriceTagProps) {
     return (
         <span
             className={`badge ${className}`}
         >
-            {formatPrice(products.price)}
+            {formatPrice(product.price)}
         </span>
     )
 }
