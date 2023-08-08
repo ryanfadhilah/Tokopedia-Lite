@@ -18,11 +18,13 @@ export async function incrementProductQuantity(productId: string) {
     } else {
         await prisma.cartItem.create({ // else, create cartItems and setup everything
             data: {
-                cartId: cart.id,
                 productId: productId,
-                quantity: 1
+                quantity: 1,
+                cartId: cart.id
             }
         })
     }
     revalidatePath("/product/[id]")
+
 }
+

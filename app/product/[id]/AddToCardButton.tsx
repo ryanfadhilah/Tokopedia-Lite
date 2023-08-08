@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useTransition } from 'react'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 // import { incrementProductQuantity } from './actions' // to avoid current but, we pas server action to client component as argument
 
 // to avoid bug we pas 
@@ -26,13 +27,18 @@ const AddToCardButton = ({ productId, incrementProductQuantity }: AddToCardButto
                 }}
                 className='flex items-center justify-center gap-5 p-5 w-full bg-black text-white rounded-md hover:bg-teal-500 animate-none ease-linear duration-150'
             >
-
-                {
+                {isPending
+                    ? <span className='loading loading-spinner loading-md'></span>
+                    : success
+                        ? <span className=' tracking-widest'> success</span>
+                        : <span>add to cart</span>
+                }
+                {/* {
                     !isPending && success
                         ? <span className=' tracking-widest'> success</span>
-                        : "add to cart"
+                        : <span>add to cart</span>
                 }
-                {isPending && <span className='loading loading-spinner loading-md'></span>}
+                {isPending && <span className='loading loading-spinner loading-md'></span>} */}
             </button>
         </div>
     )

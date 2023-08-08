@@ -42,6 +42,7 @@ export async function getCart(): Promise<ShoppingCart | null> {
 
 // triggered if user add product to their cart
 export async function createCart(): Promise<ShoppingCart> {
+
     // Create Data in MongoDB
     const cart = await prisma.cart.create({
         data: {}
@@ -50,7 +51,7 @@ export async function createCart(): Promise<ShoppingCart> {
     // Update Browser Coockies (it sohould be encrypted in production)
     cookies().set("localCardId", cart.id)
 
-    // Result
+    // Return Result
     return {
         ...cart,
         items: [],
@@ -58,4 +59,6 @@ export async function createCart(): Promise<ShoppingCart> {
         subtotal: 0
     }
 }
+
+
 
