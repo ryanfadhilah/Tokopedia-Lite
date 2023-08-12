@@ -11,15 +11,15 @@ export default async function Home() {
   })
 
   function set(nama: string, data: string) {
-    const coockies = { nama: data }
-    return coockies
+    const cookies = { nama: data }
+    return cookies
   }
 
   return (
 
 
     <div>
-      <section className="hero bg-base-200 rounded-xl">
+      <section className="hero bg-base-100 rounded-xl">
         <div className="hero-content flex-col gap-16 md:gap-10 md:flex-row">
           <Image
             src={product[0].imageUrl}
@@ -34,7 +34,7 @@ export default async function Home() {
           <div className="flex flex-col gap-5 items-center md:items-start">
             <h1 className="text-5xl font-bold">{product[0].name}</h1>
             <p>{product[0].description}</p>
-            <Link className="flex  items-center justify-center p-5 w-full bg-black text-white rounded-md hover:bg-teal-500 animate-none ease-linear duration-150 outline-none" href={`/product/${product[0].id}`}>Check out</Link>
+            <Link className="flex  items-center justify-center p-5 w-full bg-teal-800 text-white rounded-md hover:bg-teal-500 animate-none ease-linear duration-150 outline-none" href={`/product/${product[0].id}`}>Check out</Link>
           </div>
         </div>
       </section>

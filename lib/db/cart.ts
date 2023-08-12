@@ -7,6 +7,10 @@ export type CartWithProducts = Prisma.CartGetPayload<{
     include: { items: { include: { product: true } } }
 }>
 
+export type CartItemWithProducts = Prisma.CartItemGetPayload<{
+    include: { product: true }
+}>
+
 // export type ShoppingCart = Cart & {
 export type ShoppingCart = CartWithProducts & {
     size: number,
@@ -16,7 +20,7 @@ export type ShoppingCart = CartWithProducts & {
 
 export async function getCart(): Promise<ShoppingCart | null> {
 
-    // try to get coockies
+    // try to get cookies
     const localCardId = cookies().get("localCardId")?.value
 
     // if exist, find the matching id & save/include product data to cart
@@ -48,7 +52,7 @@ export async function createCart(): Promise<ShoppingCart> {
         data: {}
     })
 
-    // Update Browser Coockies (it sohould be encrypted in production)
+    // Update Browser cookies (it should be encrypted in production)
     cookies().set("localCardId", cart.id)
 
     // Return Result

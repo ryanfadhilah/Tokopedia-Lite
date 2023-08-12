@@ -15,7 +15,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     return (
         <Link
             href={`/product/${product?.id}`}
-            className="card w-full bg-base-100 hover:shadow-xl transition-shadow"
+            className="card w-full bg-base-100 shadow-md hover:shadow-xl transition-shadow"
         >
             <figure>
                 <Image

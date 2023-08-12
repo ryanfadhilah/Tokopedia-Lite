@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getCart } from '@/lib/db/cart'
 import ButtonShopingCart from './ButtonShopingCart'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 async function searchProducts(formData: FormData) {
     "use server"
@@ -20,7 +21,8 @@ const Navbar = async () => {
 
     return (
         <div className='bg-base-100'>
-            <div className='navbar max-w-7xl m-auto flex-col sm:flex-row gap-5'>
+            <div className='navbar max-w-7xl m-auto flex-col sm:flex-row md:gap-5'>
+
 
                 <div className='flex-1'>
                     <Link href="/" className='btn btn-ghost'>
@@ -29,19 +31,22 @@ const Navbar = async () => {
                     </Link>
                 </div>
 
-                <div className='flex-none'>
+
+                <div className='flex-none gap-2'>
                     <form action={searchProducts}>
-                        <div className='form-control'>
+                        <div className='flex gap-2 items-center input rounded-full bg-base-200 hover:bg-base-300 focus:bg-base-100 w-full w-min-[100px] transition-all ease-linear duration-100'>
+                            <AiOutlineSearch className='text-gray-400 '></AiOutlineSearch>
                             <input
                                 type="text"
                                 name='searchQuery'
                                 placeholder='search'
-                                className='input rounded-full bg-gray-100 w-full w-min-[100px]'
+                                className='p-auto outline-none bg-inherit'
                             />
                         </div>
                     </form>
                     <ButtonShopingCart cart={cart}></ButtonShopingCart>
                 </div>
+
 
             </div>
         </div>

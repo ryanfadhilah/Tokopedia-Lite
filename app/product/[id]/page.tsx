@@ -27,7 +27,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     const product = await getProducts(id)
     return {
-        title: `${product.name} - Tokopedia`,
+        title: `${product.name} - TOKOPEDIA`,
         description: `${product.description}`,
         openGraph: {
             images: [{ url: product.imageUrl }]

@@ -25,6 +25,7 @@ export async function incrementProductQuantity(productId: string) {
         })
     }
     revalidatePath("/product/[id]")
+    revalidatePath("/cart")
 
 }
 

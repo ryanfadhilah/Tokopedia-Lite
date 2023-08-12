@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db/prisma"
 import { redirect } from "next/navigation"
 
 export const metadata = {
-    title: "Add products - Flowmazon"
+    title: "Add products - Tokopedia"
 }
 
 async function addProduct(formData: FormData) {
