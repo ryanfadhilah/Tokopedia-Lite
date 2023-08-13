@@ -34,7 +34,7 @@ export default async function Home() {
           <div className="flex flex-col gap-5 items-center md:items-start">
             <h1 className="text-5xl font-bold">{product[0].name}</h1>
             <p>{product[0].description}</p>
-            <Link className="flex  items-center justify-center p-5 w-full bg-teal-800 text-white rounded-md hover:bg-teal-500 animate-none ease-linear duration-150 outline-none" href={`/product/${product[0].id}`}>Check out</Link>
+            <Link className="flex  items-center justify-center p-5 w-full bg-teal-700 text-white font-semibold rounded-full hover:bg-teal-500 animate-none ease-out duration-200 outline-none" href={`/product/${product[0].id}`}>Check out</Link>
           </div>
         </div>
       </section>

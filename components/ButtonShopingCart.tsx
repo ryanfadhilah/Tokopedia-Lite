@@ -26,7 +26,7 @@ const ButtonShopingCart = ({ cart }: ButtonShopingCart) => {
                         subtotal: {formatPrice(cart ? cart.subtotal : 0)}
                     </span>
                     <div className='w-full flex justify-center items-center'>
-                        <Link href={"/cart"} className='flex justify-center p-3 w-full font-semibold bg-black text-white rounded-sm hover:bg-teal-500 ease-out transition-all duration-300'>VIEW CART</Link>
+                        <Link href={"/cart"} className='flex justify-center p-3 w-full font-semibold bg-teal-700 text-white rounded-full hover:bg-teal-500 ease-out transition-all duration-300'>VIEW CART</Link>
                     </div>
                 </div>
             </div>

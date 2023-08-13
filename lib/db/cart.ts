@@ -1,6 +1,7 @@
 import { cookies } from "next/dist/client/components/headers"
 import { prisma } from "./prisma"
 import { Cart, Prisma } from "@prisma/client"
+import { revalidatePath } from "next/cache"
 
 
 export type CartWithProducts = Prisma.CartGetPayload<{
@@ -36,6 +37,7 @@ export async function getCart(): Promise<ShoppingCart | null> {
     }
 
     // Objective: return cart data && total item in cart && total price
+
     return {
         ...cart,
         size: cart.items.reduce((accumulated, item) => accumulated + item.quantity, 0),

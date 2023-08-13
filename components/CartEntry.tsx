@@ -23,6 +23,7 @@ const CartEntry = ({ cartItem, setProductQuantity }: CartEntryProps) => {
 
     const [isPending, startTransition] = useTransition()
 
+
     return (
         <div>
 

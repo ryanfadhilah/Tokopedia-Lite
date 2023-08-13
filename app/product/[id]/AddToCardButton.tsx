@@ -25,7 +25,7 @@ const AddToCardButton = ({ productId, incrementProductQuantity }: AddToCardButto
                         setSuccess(true)
                     })
                 }}
-                className='flex items-center justify-center gap-5 p-5 w-full bg-black text-white rounded-md hover:bg-teal-500 animate-none ease-linear duration-150'
+                className='flex items-center justify-center gap-5 p-5 w-full bg-teal-700 font-semibold text-white rounded-full hover:bg-teal-500 animate-none ease-out duration-200'
             >
                 {isPending
                     ? <span className='loading loading-spinner loading-md'></span>

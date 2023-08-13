@@ -21,10 +21,10 @@ const Navbar = async () => {
 
     return (
         <div className='bg-base-100'>
-            <div className='navbar max-w-7xl m-auto flex-col sm:flex-row md:gap-5'>
+            <div className='navbar max-w-7xl m-auto flex-col sm:flex-row gap-2 md:gap-5'>
 
 
-                <div className='flex-1'>
+                <div className='md:flex-1'>
                     <Link href="/" className='btn btn-ghost'>
                         <Image src="/Tokped.png" alt='foto' width={30} height={30} />
                         <p className=' tracking-wider'>TOKOPEDIA</p>
