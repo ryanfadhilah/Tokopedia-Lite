@@ -15,13 +15,15 @@ export default async function Home({ searchParams: { page = "1" } }: HomeProps) 
   const pageSize = 6
   const heroItemCount = 1
   const totalItemCount = await prisma.product.count()
-  const totalPages = Math.ceil((totalItemCount - heroItemCount) / pageSize)
+  // const totalPages = Math.ceil((totalItemCount - heroItemCount) / pageSize)
+  const totalPages = Math.ceil((totalItemCount) / pageSize)
   // const totalPages = totalItemCount / pageSize
 
   const product = await prisma.product.findMany({
     orderBy: { id: "desc" },
+    skip: (currentPage - 1) * pageSize,
     // skip: (currentPage - 1) * pageSize + (currentPage === 1 ? 0 : heroItemCount),
-    // take: pageSize + (currentPage === 1 ? heroItemCount : 0)
+    take: pageSize // + (currentPage === 1 ? heroItemCount : 0)
   })
 
   function set(nama: string, data: string) {
