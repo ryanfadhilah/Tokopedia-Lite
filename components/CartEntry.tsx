@@ -25,12 +25,12 @@ const CartEntry = ({ cartItem, setProductQuantity }: CartEntryProps) => {
 
 
     return (
-        <div>
+        <div className="">
 
             <div className="flex flex-wrap items-center gap-5">
                 <Image
-                    height={100}
-                    width={100}
+                    height={150}
+                    width={150}
                     src={cartItem.product.imageUrl}
                     alt={cartItem.product.name}
                     className="rounded-lg"

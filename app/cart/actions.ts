@@ -10,24 +10,54 @@ export async function setProductQuantity(productId: string, quantity: number) {
 
     if (quantity === 0) {
         if (itemsInCart) {
-            await prisma.cartItem.delete({
-                where: { id: itemsInCart.id },
+            await prisma.cart.update({
+                where: { id: cart.id },
+                data: {
+                    items: {
+                        delete: { id: itemsInCart.id }
+                    }
+                }
             })
+            // await prisma.cartItem.delete({
+            //     where: { id: itemsInCart.id },
+            // })
         }
     } else {
         if (itemsInCart) {
-            await prisma.cartItem.update({
-                where: { id: itemsInCart.id },
-                data: { quantity: quantity }
-            })
-        } else {
-            await prisma.cartItem.create({
+            await prisma.cart.update({
+                where: { id: cart.id },
                 data: {
-                    productId: productId,
-                    cartId: cart.id,
-                    quantity: quantity
+                    items: {
+                        update: {
+                            where: { id: itemsInCart.id },
+                            data: { quantity }
+                        }
+                    }
                 }
             })
+            // await prisma.cartItem.update({
+            //     where: { id: itemsInCart.id },
+            //     data: { quantity: quantity }
+            // })
+        } else {
+            await prisma.cart.update({
+                where: { id: cart.id },
+                data: {
+                    items: {
+                        create: {
+                            productId: productId,
+                            quantity: quantity
+                        }
+                    }
+                }
+            })
+            // await prisma.cartItem.create({
+            //     data: {
+            //         productId: productId,
+            //         cartId: cart.id,
+            //         quantity: quantity
+            //     }
+            // })
         }
 
     }

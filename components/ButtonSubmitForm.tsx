@@ -22,7 +22,7 @@ const ButtonSubmitForm = ({ children, className, ...props }: ButtonSubmitForm) =
                 ?
                 `${className}`
                 :
-                "flex items-center justify-center gap-5 p-5 w-full bg-black text-white rounded-md hover:bg-teal-500 animate-none ease-linear duration-150"
+                "flex items-center justify-center gap-5 p-5 w-full bg-teal-700 font-semibold text-white rounded-full hover:bg-teal-500 animate-none ease-out duration-150"
             }
         >
             {pending

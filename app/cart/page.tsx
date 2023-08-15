@@ -13,20 +13,20 @@ const Cart = async () => {
 
     const cart = await getCart()
 
-    if (cart?.size === 0) {
-        return <div className=" h-96 flex flex-col items-center pt-20 gap-5">
-            <p className="font-bold text-orange-500 text-6xl">Opps...</p>
-            <div className="flex items-center justify-center text-xl text-orange-400 gap-2">
-                <AiOutlineShoppingCart className="text-2xl"></AiOutlineShoppingCart>
-                <p>
-                    your cart is empty
-                </p>
-            </div>
-            <Link href="/" className=" text-white text-xl bg-teal-700 p-5 rounded-full underline-offset-4 hover:text-2xl transition-all ease-out duration-200">Lets find what you need</Link>
+    // if (!cart?.items.length) {
+    //     return <div className=" h-96 flex flex-col items-center pt-20 gap-5">
+    //         <p className="font-bold text-orange-500 text-6xl">Opps...</p>
+    //         <div className="flex items-center justify-center text-xl text-orange-400 gap-2">
+    //             <AiOutlineShoppingCart className="text-2xl"></AiOutlineShoppingCart>
+    //             <p>
+    //                 your cart is empty
+    //             </p>
+    //         </div>
+    //         <Link href="/" className=" text-white text-xl bg-teal-700 p-5 rounded-full underline-offset-4 hover:text-2xl transition-all ease-out duration-200">Lets find what you need</Link>
 
-        </div>
+    //     </div>
 
-    }
+    // }
     return (
         <div className="flex flex-col gap-10">
             <h1 className='text-2xl font-bold text-teal-700'>Shopping Cart</h1>

@@ -2,8 +2,11 @@ import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getCart } from '@/lib/db/cart'
-import ButtonShopingCart from './ButtonShopingCart'
+import ButtonShoppingCart from './ButtonShoppingCart'
 import { AiOutlineSearch } from 'react-icons/ai'
+import ButtonUserMenu from './ButtonUserMenu'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
 async function searchProducts(formData: FormData) {
     "use server"
@@ -17,34 +20,38 @@ async function searchProducts(formData: FormData) {
 
 const Navbar = async () => {
 
+    const session = await getServerSession(authOptions)
     const cart = await getCart()
+
 
     return (
         <div className='bg-base-100'>
-            <div className='navbar max-w-7xl m-auto flex-col sm:flex-row gap-2 md:gap-5'>
+            <div className='navbar max-w-7xl m-auto gap-1 md:gap-5'>
 
 
-                <div className='md:flex-1'>
-                    <Link href="/" className='btn btn-ghost'>
+                <div className='flex-1 gap-1 md:gap-5'>
+                    <Link href="/" className='btn btn-ghost '>
                         <Image src="/Tokped.png" alt='foto' width={30} height={30} />
-                        <p className=' tracking-wider'>TOKOPEDIA</p>
+                        <p className='hidden md:flex tracking-wider'>TOKOPEDIA</p>
                     </Link>
-                </div>
-
-
-                <div className='flex-none gap-2'>
-                    <form action={searchProducts}>
-                        <div className='flex gap-2 items-center input rounded-full bg-base-200 hover:bg-base-300 focus:bg-base-100 w-full w-min-[100px] transition-all ease-linear duration-100'>
-                            <AiOutlineSearch className='text-gray-400 '></AiOutlineSearch>
+                    <form action={searchProducts} className='flex-1 rounded-full'>
+                        <div className='flex items-center gap-3 outline-none text-teal-950 w-full outline-1 outline-teal-500 focus:bg-teal-50 p-3 pl-6 rounded-full transition-all ease-out duration-200'>
+                            <AiOutlineSearch className='text-teal-700 font-bold'></AiOutlineSearch>
                             <input
                                 type="text"
                                 name='searchQuery'
-                                placeholder='search'
-                                className='p-auto outline-none bg-inherit'
+                                placeholder='search here'
+                                className=' placeholder:italic text-teal-700  placeholder:font-light w-full outline-none'
+                            // className=' outline-none text-teal-950 w-full outline-1 outline-teal-500 focus:bg-teal-50 p-3 pl-6 rounded-full transition-all ease-out duration-200'
                             />
                         </div>
                     </form>
-                    <ButtonShopingCart cart={cart}></ButtonShopingCart>
+                </div>
+
+
+                <div className='md:flex gap-0 md:gap-5'>
+                    <ButtonShoppingCart cart={cart}></ButtonShoppingCart>
+                    <ButtonUserMenu session={session}></ButtonUserMenu>
                 </div>
 
 

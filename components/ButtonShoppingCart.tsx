@@ -4,11 +4,11 @@ import Link from 'next/link'
 import React from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
-interface ButtonShopingCart {
+interface ButtonShoppingCart {
     cart: ShoppingCart | null
 }
 
-const ButtonShopingCart = ({ cart }: ButtonShopingCart) => {
+const ButtonShoppingCart = ({ cart }: ButtonShoppingCart) => {
     return (
         <div className=' dropdown dropdown-end'>
 
@@ -34,4 +34,4 @@ const ButtonShopingCart = ({ cart }: ButtonShopingCart) => {
     )
 }
 
-export default ButtonShopingCart
+export default ButtonShoppingCart
