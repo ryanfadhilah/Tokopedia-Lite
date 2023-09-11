@@ -36,25 +36,36 @@ export default async function Home({ searchParams: { page = "1" } }: HomeProps) 
 
     <div className="flex flex-col items-center py-5">
 
-      {/* <section className="hero bg-base-100 rounded-xl">
-        <div className="hero-content flex-col gap-16 md:gap-10 md:flex-row">
-          <Image
-            src={product[0].imageUrl}
-            alt={product[0].name}
-            width={400}
-            height={400}
-            priority
-            className="w-full max-w-sm rounded-lg shadow-2xl"
-          >
-          </Image>
+ {/* Ads */}
 
-          <div className="flex flex-col gap-5 items-center md:items-start">
-            <h1 className="text-5xl font-bold">{product[0].name}</h1>
-            <p>{product[0].description}</p>
-            <Link className="flex  items-center justify-center p-5 w-full bg-teal-700 text-white font-semibold rounded-full hover:bg-teal-500 animate-none ease-out duration-200 outline-none" href={`/product/${product[0].id}`}>Check out</Link>
+ {currentPage === 1 && (
+        <div className=" relative h-[150px] w-full grid-cols-1 overflow-hidden rounded-xl bg-pink-200 shadow-xl md:h-[350px]">
+          <Image
+            src={product[4].imageUrl}
+            alt={product[4].name}
+            width={1000}
+            height={1000}
+            className=" col-span-1 w-full "
+            priority
+          ></Image>
+          <div className="absolute top-0 h-full w-full bg-black/20">
+            <div className="flex h-full w-full flex-col items-center justify-center px-0">
+              <h1 className=" text-xl font-bold text-base-100 md:text-5xl">
+                Advertisement
+              </h1>
+              <p className=" py-2 text-center text-sm text-base-100 md:py-6 md:text-base">
+                {product[0].description.slice(0,10)}
+              </p>
+              <Link
+                href={`/product/${product[4].id}`}
+                className=" btn-sm btn bg-base-100 text-xs text-gray-700 md:btn md:text-base"
+              >
+                Explore
+              </Link>
+            </div>
           </div>
         </div>
-      </section> */}
+      )}
 
       <section className="my-4 grid gap-5
       grid-cols-1 
@@ -76,3 +87,24 @@ export default async function Home({ searchParams: { page = "1" } }: HomeProps) 
 
   )
 }
+
+
+     {/* <section className="hero bg-base-100 rounded-xl">
+        <div className="hero-content flex-col gap-16 md:gap-10 md:flex-row">
+          <Image
+            src={product[0].imageUrl}
+            alt={product[0].name}
+            width={400}
+            height={400}
+            priority
+            className="w-full max-w-sm rounded-lg shadow-2xl"
+          >
+          </Image>
+
+          <div className="flex flex-col gap-5 items-center md:items-start">
+            <h1 className="text-5xl font-bold">{product[0].name}</h1>
+            <p>{product[0].description}</p>
+            <Link className="flex  items-center justify-center p-5 w-full bg-teal-700 text-white font-semibold rounded-full hover:bg-teal-500 animate-none ease-out duration-200 outline-none" href={`/product/${product[0].id}`}>Check out</Link>
+          </div>
+        </div>
+      </section> */}

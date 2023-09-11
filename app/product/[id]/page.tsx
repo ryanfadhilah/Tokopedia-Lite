@@ -42,8 +42,8 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 
     return (
         <div className='
-        h-screen relative flex
-        md:flex-row
+        relative flex pt-10 pb-40
+        md:flex-row md:pt-20
         flex-col gap-5'>
             <Image
                 priority

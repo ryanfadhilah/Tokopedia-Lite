@@ -28,7 +28,8 @@ const Cart = async () => {
 
     // }
     return (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 
+        pt-10">
             <h1 className='text-2xl font-bold text-teal-700'>Shopping Cart</h1>
             {cart?.items.map((v, i, a) => {
                 return (
@@ -44,7 +45,7 @@ const Cart = async () => {
                 <p className="font-bold">
                     Total: {formatPrice(cart?.subtotal || 0)}
                 </p>
-                <button className="p-5 font-semibold bg-teal-700 text-white rounded-full hover:bg-teal-500 transition-all ease-out duration-200"> Checkout</button>
+                <button className="p-4 font-semibold bg-teal-700 text-white rounded-full hover:bg-teal-500 transition-all ease-out duration-200"> Checkout</button>
             </div>
 
         </div>

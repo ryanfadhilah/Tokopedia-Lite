@@ -25,7 +25,7 @@ const Navbar = async () => {
 
 
     return (
-        <div className='bg-base-100'>
+        <div className='bg-white/90 backdrop-blur-sm pt-5'>
             <div className='navbar max-w-7xl m-auto gap-1 md:gap-5'>
 
 
@@ -41,7 +41,7 @@ const Navbar = async () => {
                                 type="text"
                                 name='searchQuery'
                                 placeholder='search here'
-                                className=' placeholder:italic text-teal-700  placeholder:font-light w-full outline-none'
+                                className=' placeholder:italic text-teal-700  placeholder:font-light w-full outline-none bg-transparent'
                             // className=' outline-none text-teal-950 w-full outline-1 outline-teal-500 focus:bg-teal-50 p-3 pl-6 rounded-full transition-all ease-out duration-200'
                             />
                         </div>

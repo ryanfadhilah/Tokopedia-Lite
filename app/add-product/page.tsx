@@ -55,22 +55,22 @@ const AddProduct = async () => {
                     type="text"
                     name='name'
                     placeholder='Product Name'
-                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700 invalid:bg-yellow-100 '
+                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700'
                 />
                 <label className="font-semibold">Description</label>
                 <textarea
                     required
                     name='description'
                     placeholder='Product Description'
-                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700 invalid:bg-yellow-100 '
+                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700'
                 />
-                <label className="font-semibold">Image Url</label>
+                <label className="font-semibold">Unplash Image Url</label>
                 <input
                     type="url"
                     required
                     name='imageUrl'
-                    placeholder='Image Url'
-                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700 invalid:bg-yellow-100 '
+                    placeholder='URL'
+                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700 '
                 />
                 <label className="font-semibold">Price</label>
                 <input
@@ -78,7 +78,7 @@ const AddProduct = async () => {
                     name="price"
                     type="number"
                     placeholder='Product Price'
-                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700 invalid:bg-yellow-100 '
+                    className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700 '
                 />
                 <ButtonSubmitForm
                     type="submit"
