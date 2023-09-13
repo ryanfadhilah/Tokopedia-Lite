@@ -15,10 +15,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
     return (
         <Link
             href={`/product/${product?.id}`}
-            className="card w-full bg-base-100 shadow-md hover:shadow-xl transition-shadow"
+            className="card w-full bg-base-100 shadow-md hover:shadow-xl transition-shadow rounded-2xl"
         >
             <figure>
-                <Image
+                <img
                     src={product?.imageUrl}
                     alt={product?.name}
                     width={800}
@@ -26,7 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     className="h-48 object-cover"
                 >
 
-                </Image>
+                </img>
 
             </figure>
 

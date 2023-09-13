@@ -29,9 +29,10 @@ const Navbar = async () => {
             <div className='navbar max-w-7xl m-auto gap-1 md:gap-5'>
 
 
-                <div className='flex-1 gap-1 md:gap-5'>
+                <div className='flex-1 gap-1 md:gap-2'>
                     <Link href="/" className='btn btn-ghost '>
-                        <Image src="/Tokped.png" alt='foto' width={30} height={30} />
+                        <Image src="/tokped.webp" alt='foto' width={50} height={50} />
+                        {/* <img src="https://media.giphy.com/media/1KyRcnqF7YPIykDWdz/giphy.gif" alt='foto' width={30} height={30} /> */}
                         <p className='hidden md:flex tracking-wider'>TOKOPEDIA</p>
                     </Link>
                     <form action={searchProducts} className='flex-1 rounded-full'>

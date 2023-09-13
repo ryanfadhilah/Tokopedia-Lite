@@ -39,12 +39,20 @@ const ButtonUserMenu = ({ session }: ButtonUserMenuProps) => {
 
             <ul
                 tabIndex={0}
-                className=" dropdown-content menu rounded-box menu-sm z-30 mt-3 w-52 bg-base-200 p-2 shadow"
+                className=" dropdown-content menu rounded-box menu-sm z-30 mt-3 w-52 bg-base-100 p-5 shadow"
             >
                 <li>
                     {user
-                        ? <button onClick={() => signOut({ callbackUrl: "/" })}>Sign Out</button>
-                        : <button onClick={() => signIn()}>Sign In</button>
+                        ? 
+                        <div className="flex gap-2 text-xl hover:text-red-500">
+                            <Image src="/cry.gif" alt="cry" width={35} height={35}></Image>
+                            <button onClick={() => signOut({ callbackUrl: "/" })}>Sign Out</button>
+                        </div>
+                        : 
+                        <div className="flex gap-2 text-xl hover:text-teal-800">
+                            <Image src="/signin.webp" alt="cry" width={35} height={35}></Image>
+                        <button onClick={() => signIn()}>Sign In</button>
+                        </div>
                     }
                 </li>
             </ul>

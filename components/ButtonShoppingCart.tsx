@@ -23,7 +23,10 @@ const ButtonShoppingCart = ({ cart }: ButtonShoppingCart) => {
                 <div className='card-body bg-white rounded-md'>
                     <span className='text-lg font-bold'>{cart ? cart.size : 0} items</span>
                     <span className=' text-gray-500'>
-                        subtotal: {formatPrice(cart ? cart.subtotal : 0)}
+                        subtotal:{" "} 
+                        <b className='font-semibold'>
+                        {formatPrice(cart ? cart.subtotal : 0)}
+                        </b>
                     </span>
                     <div className='w-full flex justify-center items-center'>
                         <Link href={"/cart"} className='flex justify-center p-3 w-full font-semibold bg-teal-700 text-white rounded-full hover:bg-teal-500 ease-out transition-all duration-300'>VIEW CART</Link>

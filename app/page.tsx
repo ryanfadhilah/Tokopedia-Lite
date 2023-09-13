@@ -38,26 +38,26 @@ export default async function Home({ searchParams: { page = "1" } }: HomeProps) 
 
  {/* Ads */}
 
- {currentPage === 1 && (
-        <div className=" relative h-[150px] w-full grid-cols-1 overflow-hidden rounded-xl bg-pink-200 shadow-xl md:h-[350px]">
-          <Image
-            src={product[4].imageUrl}
-            alt={product[4].name}
+ {/* {currentPage === 1 && ( */}
+
+        <div className=" relative h-[150px] w-full grid-cols-1 overflow-hidden rounded-2xl bg-pink-200 shadow-xl md:h-[350px]">
+          <img
+            src={product[0].imageUrl}
+            alt={product[0].name}
             width={1000}
             height={1000}
             className=" col-span-1 w-full "
-            priority
-          ></Image>
+          ></img>
           <div className="absolute top-0 h-full w-full bg-black/20">
             <div className="flex h-full w-full flex-col items-center justify-center px-0">
               <h1 className=" text-xl font-bold text-base-100 md:text-5xl">
                 Advertisement
               </h1>
               <p className=" py-2 text-center text-sm text-base-100 md:py-6 md:text-base">
-                {product[0].description.slice(0,10)}
+                {product[0].description.slice(0,20)}...
               </p>
               <Link
-                href={`/product/${product[4].id}`}
+                href={`/product/${product[0].id}`}
                 className=" btn-sm btn bg-base-100 text-xs text-gray-700 md:btn md:text-base"
               >
                 Explore
@@ -65,7 +65,7 @@ export default async function Home({ searchParams: { page = "1" } }: HomeProps) 
             </div>
           </div>
         </div>
-      )}
+      {/* )} */}
 
       <section className="my-4 grid gap-5
       grid-cols-1 
