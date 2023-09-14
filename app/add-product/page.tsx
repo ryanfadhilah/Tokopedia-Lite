@@ -64,7 +64,7 @@ const AddProduct = async () => {
                     placeholder='Product Description'
                     className=' placeholder:italic p-5 rounded-sm w-full bg-base-200 placeholder:text-teal-700 focus:bg-teal-50 transition-all ease-out duration-200 outline-none hover:outline-2 hover:outline-teal-700'
                 />
-                <label className="font-semibold">Unplash Image Url</label>
+                <label className="font-semibold">Image Url</label>
                 <input
                     type="url"
                     required
