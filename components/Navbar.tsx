@@ -37,7 +37,9 @@ const Navbar = async () => {
                     </Link>
                     <form action={searchProducts} className='flex-1 rounded-full'>
                         <div className='flex items-center gap-3 outline-none text-teal-950 w-full outline-1 outline-teal-500 focus:bg-teal-50 p-3 pl-6 rounded-full transition-all ease-out duration-200'>
+                            <button>
                             <AiOutlineSearch className='text-teal-700 font-bold'></AiOutlineSearch>
+                            </button>
                             <input
                                 type="text"
                                 name='searchQuery'
